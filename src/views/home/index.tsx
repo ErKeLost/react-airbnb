@@ -1,6 +1,7 @@
-import React, { memo, useEffect } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { request } from "@/services";
 const Home = memo(() => {
+  const [highScore, setHighScore] = useState({ list: [] });
   useEffect(() => {
     request
       .get({
@@ -8,9 +9,16 @@ const Home = memo(() => {
       })
       .then((res: any) => {
         console.log(res);
+        setHighScore(res);
       });
   }, []);
-  return <div>Home</div>;
+  return (
+    <div>
+      {highScore.list?.map((item: any) => {
+        return <img key={item.id} src={item.picture_url} />;
+      })}
+    </div>
+  );
 });
 
 export default Home;
