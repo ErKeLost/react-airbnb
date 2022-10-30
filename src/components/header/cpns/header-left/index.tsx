@@ -1,10 +1,15 @@
-import React, { memo } from 'react'
-import HeaderLeftWrapper from './style'
+import React, { memo } from "react";
+import IconLogo from "~/assets/svg/icon_logo";
+import HeaderLeftWrapper from "./style";
 
 const HeaderCenter = memo(() => {
   return (
-    <HeaderLeftWrapper>Headerleft</HeaderLeftWrapper>
-  )
-})
+    <HeaderLeftWrapper>
+      <div className="logo">
+        <IconLogo></IconLogo>
+      </div>
+    </HeaderLeftWrapper>
+  );
+});
 
-export default HeaderCenter
+export default HeaderCenter;
