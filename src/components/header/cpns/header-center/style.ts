@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-const HeaderLeftWrapper = styled.div``;
+const HeaderCenterWrapper = styled.div``;
 
-export default HeaderLeftWrapper;
+export default HeaderCenterWrapper;

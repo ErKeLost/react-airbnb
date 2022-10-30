@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
-const HeaderCenterWrapper = styled.div``;
+const HeaderLeftWrapper = styled.div`
+  flex: 1;
+`;
 
-export default HeaderCenterWrapper;
+export default HeaderLeftWrapper;

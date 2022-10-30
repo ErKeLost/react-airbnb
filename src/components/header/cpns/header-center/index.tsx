@@ -1,9 +1,8 @@
-import React, { memo } from 'react'
+import React, { memo } from "react";
+import HeaderCenterWrapper from "./style";
 
 const HeaderLeft = memo(() => {
-  return (
-    <div>HeaderLeft</div>
-  )
-})
+  return <HeaderCenterWrapper>Headercenter</HeaderCenterWrapper>;
+});
 
-export default HeaderLeft
+export default HeaderLeft;
