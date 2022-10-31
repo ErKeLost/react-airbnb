@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React, { memo, useEffect, useState } from "react";
 import HeaderRightWrapper from "./style";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -6,6 +6,17 @@ import IconGlobal from "~/assets/svg/icon_global";
 import IconMenu from "~/assets/svg/icon_menu";
 import IconAvatar from "~/assets/svg/icon_avatar";
 const HeaderRight = memo(() => {
+  const [showPanel, setShowPanel] = useState(false);
+  /** 副作用代码 */
+  useEffect(() => {
+    function windowHandleClick() {
+      setShowPanel(false);
+    }
+    window.addEventListener("click", windowHandleClick, true);
+    return () => {
+      window.removeEventListener('click', windowHandleClick)
+    }
+  }, []);
   return (
     <HeaderRightWrapper>
       <div className="button">
@@ -15,20 +26,22 @@ const HeaderRight = memo(() => {
           <IconGlobal />
         </IconButton>
       </div>
-      <div className="profile">
+      <div className="profile" onClick={() => setShowPanel(true)}>
         <IconMenu />
         <IconAvatar />
-        <div className="panel">
-          <div className="top">
-            <div className="register">注册</div>
-            <div className="login">登录</div>
+        {showPanel && (
+          <div className="panel">
+            <div className="top">
+              <div className="item register">注册</div>
+              <div className="item login">登录</div>
+            </div>
+            <div className="bottom">
+              <div className="item">出租房源</div>
+              <div className="item">开展体验</div>
+              <div className="item">帮助</div>
+            </div>
           </div>
-          <div className="bottom">
-            <div className="house">出租房源</div>
-            <div className="source">开展体验</div>
-            <div className="help">帮助</div>
-          </div>
-        </div>
+        )}
       </div>
     </HeaderRightWrapper>
   );
