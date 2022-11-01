@@ -29,3 +29,4 @@ const request = new Request({
 
 export { Request, request };
 // export default serviceGlobalFiles;
+export * from './modules/home'
