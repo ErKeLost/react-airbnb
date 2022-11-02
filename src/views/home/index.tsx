@@ -5,6 +5,7 @@ import { HomeWrapper } from "./style";
 import { fetchHomeData } from "@/store/modules/home";
 import SectionHeader from "~/components/section-header";
 import ItemCard from "~/components/item-card";
+import ListCard from "~/components/list-card";
 const Home = memo(() => {
   // redux中获取数据
   const { goodPriceInfo } = useSelector(
@@ -25,9 +26,7 @@ const Home = memo(() => {
         <div className="goodPrice">
           <SectionHeader title={goodPriceInfo.title}></SectionHeader>
           <div className="room-list">
-            {goodPriceInfo?.list?.slice(0, 8).map((item: any) => {
-              return <ItemCard itemData={item} key={item.id} />;
-            })}
+            <ListCard listData={goodPriceInfo}></ListCard>
           </div>
         </div>
       </div>

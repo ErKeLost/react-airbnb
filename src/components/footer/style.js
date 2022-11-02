@@ -12,11 +12,12 @@ export const FooterWrapper = styled.div`
   }
 
   .service {
+    font-size: 14px;
     display: flex;
 
     .item {
       flex: 1;
-
+      
       .name {
         margin-bottom: 16px;
         font-weight: 700;
@@ -24,7 +25,7 @@ export const FooterWrapper = styled.div`
 
       .list {
         .iten {
-          margin-top: 6px;
+          margin-top: 12px;
           color: #767676;
           cursor: pointer;
           &:hover {

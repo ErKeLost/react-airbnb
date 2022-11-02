@@ -15,14 +15,21 @@ const ItemCard = memo((props) => {
         <div className="desc">{itemData.verify_info.messages.join(" . ")}</div>
         <div className="name">{itemData.name}</div>
         <div className="price">$ {itemData.price} / 晚</div>
-        <Rating
-          name="simple-controlled"
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
-          sx={{ fontSize: "14px" , color:"#00848a"}}
-        />
+        <div className="bottom">
+          <Rating
+            name="simple-controlled"
+            value={itemData.star_rating ?? 3.5}
+            precision={0.1}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            sx={{ fontSize: "14px", color: "#00848a" }}
+          />
+          <span className="count">{itemData.reviews_count}</span>
+          {
+            itemData?.bottom_info && <span>{itemData?.bottom_info?.content}</span>
+          }
+        </div>
       </div>
     </ItemWrapper>
   );
