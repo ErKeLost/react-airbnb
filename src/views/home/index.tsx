@@ -3,6 +3,8 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import HomeBanner from "./cpns/home-banner";
 import { HomeWrapper } from "./style";
 import { fetchHomeData } from "@/store/modules/home";
+import SectionHeader from "~/components/section-header";
+import ItemCard from "~/components/item-card";
 const Home = memo(() => {
   // redux中获取数据
   const { goodPriceInfo } = useSelector(
@@ -20,11 +22,13 @@ const Home = memo(() => {
     <HomeWrapper>
       <HomeBanner />
       <div className="content">
-        <h2>{goodPriceInfo?.title}</h2>
-        <div>
-          {goodPriceInfo?.list?.map((item: any) => {
-            return <div key={item.id}>{item.name}</div>;
-          })}
+        <div className="goodPrice">
+          <SectionHeader title={goodPriceInfo.title}></SectionHeader>
+          <div className="room-list">
+            {goodPriceInfo?.list?.slice(0, 8).map((item: any) => {
+              return <ItemCard itemData={item} key={item.id} />;
+            })}
+          </div>
         </div>
       </div>
     </HomeWrapper>
