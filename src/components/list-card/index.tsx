@@ -15,7 +15,7 @@ const ListCard = memo((props) => {
 });
 
 ListCard.propTypes = {
-  listData: PropTypes.array,
+  listData: PropTypes.object,
 };
 
 export default ListCard;

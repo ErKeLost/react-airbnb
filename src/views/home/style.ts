@@ -6,12 +6,5 @@ export const HomeWrapper = styled.div`
     max-width: 1200px;
     margin: 0 auto;
   }
-  .goodPrice {
-    margin-top: 30px;
-  }
-  .room-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -8px;
-  }
+
 `;
