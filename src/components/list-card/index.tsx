@@ -10,7 +10,7 @@ const ListCard = memo((props) => {
       className="room-list list"
       style={{ display: "flex", flexWrap: "wrap", margin: "0 -8px" }}
     >
-      {listData?.slice(0, 8).map((item: any) => {
+      {listData?.slice(0, 8)?.map((item: any) => {
         return <ItemCard itemWidth={itemWidth} itemData={item} key={item.id} />;
       })}
     </ListCardWrapper>

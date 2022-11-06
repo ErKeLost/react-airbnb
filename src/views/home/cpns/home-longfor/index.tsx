@@ -12,7 +12,7 @@ const LangFor = memo((props) => {
       <SectionHeader title={longfor.title} subTitle={longfor.subtitle} />
       <div className="longfor-list">
         <ScrollView>
-          {longfor?.list.map((item) => {
+          {longfor?.list?.map((item) => {
             return <LangForItem itemData={item} key={item.city} />;
           })}
         </ScrollView>
