@@ -13,7 +13,7 @@ const HomePlus = memo((props) => {
       <SectionHeader title={infoData.title} subTitle={infoData.subtitle} />
       <div className="root-list">
         <ScrollView>
-          {infoData.list.map((item) => {
+          {infoData?.list.map((item) => {
             return (
               <ItemCard
                 itemWidth="20%"
