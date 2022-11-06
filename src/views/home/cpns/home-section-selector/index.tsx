@@ -7,7 +7,7 @@ import SectionTabs from "~/components/section-tabs";
 import { HomeSectionSelectorWrapper } from "./style";
 const HomeSectionSelector = memo((props) => {
   const { discountData } = props;
-  const tabNames = discountData.dest_address?.map((item) => {
+  const tabNames = discountData?.dest_address?.map((item) => {
     return item.name;
   });
   const [name, setName] = useState(tabNames?.[0]);
