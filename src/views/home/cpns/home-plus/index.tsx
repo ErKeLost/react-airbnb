@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React, { memo } from "react";
 import ItemCard from "~/components/item-card";
 import ScrollView from "~/components/scroll-view";
+import SectionFooter from "~/components/section-footer";
 import SectionHeader from "~/components/section-header";
 import { PlusWrapper } from "./style";
 
@@ -24,6 +25,7 @@ const HomePlus = memo((props) => {
           })}
         </ScrollView>
       </div>
+      <SectionFooter name="plus"/>
     </PlusWrapper>
   );
 });
