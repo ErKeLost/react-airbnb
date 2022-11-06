@@ -4,19 +4,21 @@ import HomeBanner from "./cpns/home-banner";
 import { HomeWrapper } from "./style";
 import { changeHighScoreInfo, fetchHomeData } from "@/store/modules/home";
 import HomeSection from "./cpns/home-section";
+import LongFor from './cpns/home-longfor'
 import HomeSectionSelector from "./cpns/home-section-selector";
 import { isEmpty } from "~/utils";
 const Home = memo(() => {
   console.log("加载首页啦");
 
   // redux中获取数据
-  const { goodPriceInfo, highScoreInfo, discountList, hotRecommend } =
+  const { goodPriceInfo, highScoreInfo, longfor, discountList, hotRecommend } =
     useSelector(
       (state: any) => ({
         goodPriceInfo: state.home.goodPrice,
         highScoreInfo: state.home.highScoreInfo,
         discountList: state.home.discountList,
         hotRecommend: state.home.hotRecommend,
+        longfor: state.home.longForData,
       }),
       shallowEqual
     );
@@ -34,6 +36,9 @@ const Home = memo(() => {
         )}
         {isEmpty(hotRecommend) && (
           <HomeSectionSelector discountData={hotRecommend} />
+        )}
+        {isEmpty(longfor) && (
+          <LongFor longfor={longfor} />
         )}
         <HomeSection infoData={goodPriceInfo} />
         <HomeSection infoData={highScoreInfo} />
