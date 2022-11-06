@@ -46,9 +46,9 @@ const Home = memo(() => {
           <HomeSectionSelector discountData={hotRecommend} />
         )}
         {isEmpty(longfor) && <LongFor longfor={longfor} />}
-        <HomeSection infoData={goodPriceInfo} />
-        <HomeSection infoData={highScoreInfo} />
-        {isEmpty(longfor) && <HomePlus infoData={homePlusData} />}
+        {isEmpty(goodPriceInfo) && <HomeSection infoData={goodPriceInfo} />}
+        {isEmpty(highScoreInfo) && <HomeSection infoData={highScoreInfo} />}
+        {isEmpty(homePlusData) && <HomePlus infoData={homePlusData} />}
       </div>
     </HomeWrapper>
   );
