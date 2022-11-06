@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const ItemWrapper = styled.div`
   box-sizing: border-box;
-  width: 25%;
+  width: ${(props) => props.itemWidth};
+  margin: 8px 0;
   padding: 8px;
   .inner {
     width: 100%;
@@ -25,7 +26,7 @@ export const ItemWrapper = styled.div`
     margin: 10px 0 5px;
     font-size: 12px;
     font-weight: 700;
-    color: ${props => props.verifyColor};
+    color: ${(props) => props.verifyColor};
   }
   .name {
     font-size: 16px;
