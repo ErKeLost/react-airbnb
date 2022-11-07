@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
+import { EntirePaginationWrapper } from './style'
 
 const EntirePagination = memo((props) => {
   return (
-    <div>EntirePagination</div>
+    <EntirePaginationWrapper>EntirePagination</EntirePaginationWrapper>
   )
 })
 
